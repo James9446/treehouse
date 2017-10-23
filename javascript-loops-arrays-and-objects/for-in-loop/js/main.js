@@ -8,13 +8,13 @@ var person = {
 };
 
 // 'prop' acts like a variable it could be named key or anything else
-for (prop in person) {
+for (var prop in person) {
 	// console feature is letting me print multiple string, so print property name, then a ":" string and then property value
 	console.log(prop, ":", person[prop])
 }
 
 
-for (prop in person) {
+for (var prop in person) {
 	// The ":" string was not necessary it just looks cool, also note that [] notation is necessary. dot notation will not work to get the value in this case
 	console.log(prop, person[prop])
 }
