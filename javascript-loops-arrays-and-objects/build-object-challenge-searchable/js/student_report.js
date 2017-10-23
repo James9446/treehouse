@@ -11,6 +11,14 @@ function print(message) {
 	outputDiv.innerHTML = message;
 }
 
+function getStudentReport(student) {
+	var report = "<h2>Student: " + student.name + "</h2>";
+	report += "<p> Track: " + student.track + "</p>";
+	report += "<p> Achievements: " + student.achievements + "</p>";
+	report += "<p> Points: " + student.points + "</p>";
+	return report;
+}
+
 while (true) {
 	userInput = prompt("Please enter a student name to search student records, or type \"Quit\" to exit.");
 	userInput = userInput.toLowerCase();
@@ -22,10 +30,8 @@ while (true) {
 	for (i = 0; i < students.length; i++) {
 		student = students[i];
 		if (userInput === student.name.toLowerCase()) {
-			message += "<h2>Student: " + student.name + "</h2>";
-			message += "<p> Track: " + student.track + "</p>";
-			message += "<p> Achievements: " + student.achievements + "</p>";
-			message += "<p> Points: " + student.points + "</p>";
+			message = getStudentReport(student);
+			print(message);
 		}
 	}
 } 
